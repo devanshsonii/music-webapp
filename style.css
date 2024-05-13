@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    font-family: Arial, sans-serif;
+}
+.song-title {
+    color: white;
+}
+.song-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    height: 100vh;
+}
+.homepage {
+    background-color: white;
+    height: 100vh;
+    text-align: center;
+}
+#song0 {
+    background: url('song0.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+#song1 {
+    background: url('song1.jpeg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+#song2 {
+    background: url('song2.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+#song3 {
+    background: url('song3.jpeg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+#song0-image {
+    width: 200px;
+    height: 200px;
+    background: url("song0.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+#song1-image {
+    width: 200px;
+    height: 200px;
+    background: url("song1.jpeg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+#song2-image {
+    width: 200px;
+    height: 200px;
+    background: url("song2.png") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+#song3-image {
+    width: 200px;
+    height: 200px;
+    background: url("song3.jpeg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.play-button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height: 10px;
+    background-color: #333;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+.progress-bar progress {
+    width: 100%;
+    height: 100%;
+    background-color: #ff5733;
+}
+.progress-bar progress[value]::-webkit-progress-value {
+    background-color: #ff5733;
+}
+.progress-bar progress:not([value])::-webkit-progress-value {
+    background-color: #666;
+}
+.homepage {
+    text-align: center;
+}
+
+.homepage h2 {
+    font-size: 28px;
+}
+
+
+.scroll-text {
+    font-size: 16px;
+}
+.playlist {
+    height: 100vh;
+    font-size: 56px;
+    text-align: center;
+    background-color: #2E4057;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist p {
+    background: linear-gradient(to right, #7CA5B8, #E1EFF6);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+
+.arrow-button {
+    position: relative;
+    background-color: #3498db; 
+    border: 2px solid #3498db; 
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff; 
+    text-decoration: none;
+    transition: background-color 0.3s;
+    color: #3498db00;
+}
+
+.arrow-button:hover {
+    background-color: #267dbf; /* Change this to your desired hover color */
+    color: #267dbf00;
+}
+

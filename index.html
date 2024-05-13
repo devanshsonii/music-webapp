@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Music Album</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    
+    var playing = NULL;
+    function toggleAudio(audioId, button) {
+        var audio = document.getElementById(audioId);
+        if (playing && playing != audio) {
+            playing.pause();
+            playing.currentTime = 0;
+        }
+        playing = audio;
+        if (audio.paused) {
+            audio.play();
+            button.textContent = "Pause";
+        } else {
+            audio.pause();
+            button.textContent = "Play";
+        }
+    }
+    function updateProgress(audioId, progressId) {
+        var audio = document.getElementById(audioId);
+        var progress = document.getElementById(progressId);
+        var value = (audio.currentTime / audio.duration) * 100;
+        progress.value = value;
+    
+    }
+    function seekAudio(audioId, progressId, event) {
+        var audio = document.getElementById(audioId);
+        var progress = document.getElementById(progressId);
+
+        var clickX = event.clientX - progress.getBoundingClientRect().left;
+        var progressWidth = progress.offsetWidth;
+        var seekTime = (clickX / progressWidth) * audio.duration;
+
+        audio.currentTime = seekTime;
+    }
+</script>
+<body>
+
+    <div class="playlist">
+        <p id="playlist">Get ready to dive into <br> 
+            Our curated music playlist. <br><br>
+            Scroll down to get started. 
+            </p>
+    </div>
+
+    <div class="song-container">
+        <div id="song0" class="section"></div>
+        <div class ="song-title">
+            <h1>Older - Alec Benjamin</h1>
+        </div>
+        <div id="song0-image"></div>
+        <button class="play-button" onclick="toggleAudio('audio0', this)">Play</button>
+        <div class="progress-bar">
+            <progress id="progress0" value="0" max="100" onclick="seekAudio('audio0', 'progress0', event)"></progress>
+        </div>
+        <audio id="audio0" src="song0.mp3" ontimeupdate="updateProgress('audio0', 'progress0')"></audio>
+    </div>
+
+    <div class="song-container">
+        <div id="song1" class="section"></div>
+        <div class ="song-title">
+            <h1>Daylight - David Kushner</h1>
+        </div>
+        <div id="song1-image"></div>
+        <button class="play-button" onclick="toggleAudio('audio1', this)">Play</button>
+        <div class="progress-bar">
+            <progress id="progress1" value="0" max="100" onclick="seekAudio('audio1', 'progress1', event)"></progress>
+
+        </div>
+        <audio id="audio1" src="song1.mp3" ontimeupdate="updateProgress('audio1', 'progress1')"></audio>
+    </div>
+
+    <div class="song-container">
+        <div id="song2" class="section"></div>
+        <div class ="song-title">
+            <h1>Attention - Charlie Puth</h1>
+        </div>
+        <div id="song2-image"></div>
+        <button class="play-button" onclick="toggleAudio('audio2', this)">Play</button>
+        <div class="progress-bar">
+            <progress id="progress2" value="0" max="100" onclick="seekAudio('audio2', 'progress2', event)"></progress>
+
+        </div>
+        <audio id="audio2" src="song2.mp3" ontimeupdate="updateProgress('audio2', 'progress2')"></audio>
+    </div>
+
+    <div class="song-container">
+        <div id="song3" class="section"></div>
+        <div class ="song-title">
+            <h1>Starboy - The Weeknd</h1>
+        </div>
+        <div id="song3-image"></div>
+        <button class="play-button" onclick="toggleAudio('audio3', this)">Play</button>
+        <div class="progress-bar">
+            <progress id="progress3" value="0" max="100" onclick="seekAudio('audio3', 'progress3', event)"></progress>
+        </div>
+        <audio id="audio3" src="song3.mp3" ontimeupdate="updateProgress('audio3', 'progress3')"></audio>
+    </div>
+
+</body>
+</html>
